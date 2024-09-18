@@ -8,7 +8,7 @@ const elements = {
 	bannerImage: document.getElementById("banner-image"),
 	bannerColor: document.querySelector(".banner"),
 	displayName: document.querySelector(".display-name"),
-	username: document.querySelector(".username"),
+	clanId: document.querySelector(".clanId"),
 	badges: document.querySelector(".badges-left"),
 	customStatus: document.querySelector(".custom-status"),
 	customStatusText: document.querySelector(".custom-status-text"),
@@ -18,10 +18,10 @@ const elements = {
 async function fetchDiscordStatus() {
 	try {
 		const [lanyardResponse, lookupResponse] = await Promise.all([
-			fetch(`https://api.lanyard.rest/v1/users/1169111190824308768`).then((response) =>
+			fetch(`https://api.kirka.io/api/leaderboard/clanChampionship`).then((response) =>
 				response.json()
 			),
-			fetch(`https://discordlookup.mesavirep.xyz/v1/user/1169111190824308768`).then(
+			fetch(`https://api.kirka.io/api/leaderboard/clanChampionship`).then(
 				(response) => response.json()
 			),
 		]);
